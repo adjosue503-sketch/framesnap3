@@ -1,0 +1,19 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "tuusuario.framesnap",
+  "name": "FrameSnap",
+  "version": "v0.1.0",
+  "developer": "tuusuario",
+  "description": "Ayuda de timing para clicks. Modo regular y modo frame perfect.",
+  "settings": {
+    "frame-perfect": {
+      "type": "bool",
+      "name": "Modo frame perfect",
+      "description": "Apagado es el modo regular: el juego funciona como siempre.",
+      "default": true
+    }
+  }
+}
