@@ -5,15 +5,23 @@
   },
   "id": "github.framesnap",
   "name": "FrameSnap",
-  "version": "v0.1.0",
+  "version": "v0.2.0",
   "developer": "tuusuario",
-  "description": "Ayuda de timing para clicks. Modo regular y modo frame perfect.",
+  "description": "Ayuda de timing para clicks. Modo regular y modo frame perfect adaptativo.",
   "settings": {
     "frame-perfect": {
       "type": "bool",
       "name": "Modo frame perfect",
       "description": "Apagado es el modo regular: el juego funciona como siempre.",
       "default": true
+    },
+    "window-ms": {
+      "type": "int",
+      "name": "Ventana base (ms)",
+      "description": "Tolerancia mínima. En niveles con lag se amplía sola.",
+      "default": 80,
+      "min": 0,
+      "max": 200
     }
   }
 }
