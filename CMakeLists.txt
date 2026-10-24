@@ -6,7 +6,8 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(FrameSnap VERSION 0.1.0)
 
-add_library(${PROJECT_NAME} SHARED src/main.cpp)
+file(GLOB SOURCES src/*.cpp)
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Define la variable de entorno GEODE_SDK")
