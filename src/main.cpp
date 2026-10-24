@@ -8,6 +8,9 @@ using namespace geode::prelude;
 using Clock = std::chrono::steady_clock;
 using FSec = std::chrono::duration<float>;
 
+// Definida en input_hook.cpp: hora real del último click o tecla
+Clock::time_point lastInputTime();
+
 struct QueuedClick {
     bool down;
     int button;
@@ -32,7 +35,7 @@ class $modify(FrameSnapLayer, GJBaseGameLayer) {
         if (!framePerfect() || g_applying || !PlayLayer::get()) {
             return GJBaseGameLayer::handleButton(down, button, isPlayer1);
         }
-        g_queue.push_back({down, button, isPlayer1, Clock::now()});
+        g_queue.push_back({down, button, isPlayer1, lastInputTime()});
     }
 
     void update(float dt) {
